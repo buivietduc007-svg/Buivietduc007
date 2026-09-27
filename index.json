@@ -1,14 +1,39 @@
 {
+  "schemaVersion": 1,
+  "identifier": "buivduc07.github.io",
   "name": "Buivduc07",
   "description": "Bùi Việt Đức Develop",
-  "icon": "logo.png",
+  "accentColor": "#4F46E5",
+  "icon": "assets/logo.png",
   "packages": [
     {
+      "identifier": "hachiware",
       "name": "Hachiware Dialer",
       "author": "Buivduc07",
-      "type": "dialer",
-      "path": "dialers/Mèo.3105pass",
-      "preview": "logo.png"
+      "version": "1.0.0",
+      "summary": "Buivduc07 • Call Theme",
+      "description": "Hachiware Dialer for Call Theme 3105",
+      "category": "Dialer",
+      "tags": ["Dialer","Hachiware"],
+      "publishedAt": "2026-09-28T00:00:00Z",
+      "download": "packages/Mèo.3105pass",
+      "sha256": "",
+      "size": 0,
+      "supportedOS": [
+        {
+          "minimum": "17.0",
+          "maximum": "27.0"
+        }
+      ],
+      "featured": true,
+      "isPrivate": false,
+      "icon": "assets/logo.png",
+      "screenshots": [
+        "assets/1.png",
+        "assets/2.png",
+        "assets/3.png"
+      ],
+      "password": ""
     }
   ]
 }
