@@ -2,13 +2,13 @@
   "name": "Buivduc07",
   "description": "Bùi Việt Đức Develop",
   "icon": "logo.png",
-  "dialers": [
+  "packages": [
     {
       "name": "Hachiware Dialer",
       "author": "Buivduc07",
-      "file": "dialers/Mèo.3105pass",
+      "type": "dialer",
+      "path": "dialers/Mèo.3105pass",
       "preview": "logo.png"
     }
-  ],
-  "patches": []
+  ]
 }
