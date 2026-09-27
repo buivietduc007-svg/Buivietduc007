@@ -1,6 +1,6 @@
 {
   "name": "Buivduc07",
-  "description": "Official 3105 Repository",
+  "description": "Bùi Việt Đức Develop",
   "icon": "logo.png",
 
   "dialers": [],
