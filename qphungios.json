@@ -457,6 +457,42 @@
           ]
         }
       ],
+      "featured": true {
+      "identifier": "",
+      "name": "Theme telephone",
+      "author": "buivduc",
+      "version": "1.0.0",
+      "summary": "buivduc07 • H4CK IOS",
+      "description": " Zalo 0904252080  Tele @buivduc07 ",
+      "category": "Game",
+      "tags": [
+        "Game",
+        "buivduc07"
+      ],
+      "publishedAt": "2026-09-15T07:15:00Z",
+      "download": "packages/Mèo.3105pass",
+      "sha256": "ae817a6c2d01e962d0554122933564b881a9b654d7a1eee89f41ce0d40d86d16",
+      "size": 2621284,
+      "supportedOS": [
+        {
+          "minimum": "17.0",
+          "maximum": "18.7.1"
+        },
+        {
+          "minimum": "26.0",
+          "maximum": "26.6.1"
+        },
+        {
+          "minimum": "27.0",
+          "maximum": "27.0",
+          "builds": [
+            "24A5355q",
+            "24A5370h",
+            "24A5380h",
+            "24A5390f"
+          ]
+        }
+      ],
       "featured": true,
       "isPrivate": false,
       "icon": "assets/icon.png",
@@ -468,5 +504,7 @@
       "password": "buivduc07"
     }
   ]
-}
+},
+      
+
 
