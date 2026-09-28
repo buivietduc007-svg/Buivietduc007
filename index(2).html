@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JSON Catalog Editor</title>
+<style>
+body{margin:0;background:#080b12;color:#e8edf7;font:15px Arial}.wrap{max-width:900px;margin:30px auto;padding:16px}.card{background:#111827;border:1px solid #263247;border-radius:16px;padding:20px;margin-bottom:16px}h1{margin:0 0 8px}.muted{color:#94a3b8}input,textarea,button{width:100%;box-sizing:border-box;border-radius:10px;border:1px solid #334155;background:#0b1220;color:#fff;padding:11px}textarea{min-height:360px;font-family:Consolas,monospace}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;margin:12px 0 6px;font-weight:bold}button{cursor:pointer;background:#2563eb;border:0;font-weight:bold;margin-top:10px}button.secondary{background:#334155}#status{margin-top:10px;color:#67e8f9;white-space:pre-wrap}@media(max-width:650px){.row{grid-template-columns:1fr}}
+</style></head>
+<body><div class="wrap">
+<div class="card"><h1>JSON Catalog Editor</h1><div class="muted">Mở qphungios.json → sửa identifier, tên, icon → tải lại JSON.</div></div>
+<div class="card">
+<label>Chọn file JSON</label><input id="file" type="file" accept=".json,application/json">
+<div class="row"><div><label>Identifier</label><input id="identifier"></div><div><label>Tên</label><input id="name"></div></div>
+<label>Icon</label><input id="icon" placeholder="assets/icon.png">
+<button onclick="applyMeta()">Áp dụng thay đổi</button><button class="secondary" onclick="downloadJson()">Tải qphungios.json</button>
+<div id="status"></div></div>
+<div class="card"><label>JSON</label><textarea id="json" spellcheck="false"></textarea></div>
+</div>
+<script>
+let data=null;
+const $=id=>document.getElementById(id);
+$("file").onchange=async e=>{let f=e.target.files[0];if(!f)return;try{data=JSON.parse(await f.text());$("json").value=JSON.stringify(data,null,2);loadMeta();$("status").textContent="Đã mở: "+f.name}catch(x){$("status").textContent="JSON lỗi: "+x.message}};
+function loadMeta(){if(!data)return;$("identifier").value=data.identifier??"";$("name").value=data.name??"";$("icon").value=data.icon??""}
+function applyMeta(){try{data=JSON.parse($("json").value);data.identifier=$("identifier").value;data.name=$("name").value;data.icon=$("icon").value;$("json").value=JSON.stringify(data,null,2);$("status").textContent="Đã áp dụng thay đổi."}catch(x){$("status").textContent="JSON lỗi: "+x.message}}
+function downloadJson(){try{data=JSON.parse($("json").value);let b=new Blob([JSON.stringify(data,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="qphungios.json";a.click();URL.revokeObjectURL(a.href);$("status").textContent="Đã tạo qphungios.json."}catch(x){$("status").textContent="JSON lỗi: "+x.message}}
+</script></body></html>
