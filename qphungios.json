@@ -424,7 +424,7 @@
     {
       "identifier": "aimbxic",
       "name": "FTH MAGIC ( BẬT SẢNH )",
-      "author": "qphungios",
+      "author": "buivduc",
       "version": "1.0.0",
       "summary": "buivduc07 • H4CK IOS",
       "description": " Zalo 0904252080  Tele @buivduc07 ",
@@ -468,4 +468,25 @@
       "password": "buivduc07"
     }
   ]
+}
+{
+  "identifier": "package-moi",
+  "name": "Tên package",
+  "author": "buivietduc07",
+  "version": "1.0.0",
+  "summary": "Mô tả ngắn",
+  "description": "Mô tả package",
+  "category": "Game",
+  "tags": [
+    "Game"
+  ],
+  "publishedAt": "2026-09-28T00:00:00Z",
+  "download": "packages/Mèo.3105pass",
+  "sha256": "ae817a6c2d01e962d0554122933564b881a9b654d7a1eee89f41ce0d40d86d16",
+  "size": 123456,
+  "supportedOS": [],
+  "featured": false,
+  "isPrivate": false,
+  "icon": "assets/IMG_1208.png",
+  "screenshots": []
 }
