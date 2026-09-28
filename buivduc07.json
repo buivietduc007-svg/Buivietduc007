@@ -138,8 +138,8 @@
     "assets/IMG_0804.png",
     "assets/IMG_1208.png"
   ],
-"password": "qphungios"
-}
+      "password": "qphungios"
+    },
     {
       "identifier": "aimbot3",
       "name": "FFM AIMDRAG ( BẬT SẢNH )",
@@ -502,7 +502,7 @@
     "description": "Theme telephone",
     "category": "Theme",
     "tags": [
-      "Theme",
+      "Theme"
     ],
     "publishedAt": "2026-09-15T07:15:00Z",
     "download": "packages/telephonemeo.3105pass",
