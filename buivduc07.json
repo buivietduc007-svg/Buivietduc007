@@ -489,6 +489,40 @@
       ],
       "password": "qphungios"
     },
+      {
+      "identifier": "aimbxic",
+      "name": "MÁP",
+      "author": "buivduc",
+      "version": "1.0.0",
+      "summary": "buivduc07 • H4CK IOS",
+      "description": "Zalo 0904252080  Tele @buivduc07 ",
+      "tags": [
+        "HACK LIÊN QUÂN"
+      ],
+      "publishedAt": "2026-09-15T07:15:00Z",
+      "download": "packages/Map.3105",
+      "sha256": "21a6a445d3d144c1636958af728a6bba940bc034f2d79d3ab441f5ede0424bd8",
+      "size": 16474,
+      "supportedOS": [
+        {
+          "minimum": "17.0",
+          "maximum": "18.7.1"
+        },
+        {
+          "minimum": "26.0",
+          "maximum": "26.6.1"
+        },
+        {
+          "minimum": "27.0",
+          "maximum": "27.0"
+        }
+      ],
+      "featured": true,
+      "isPrivate": false,
+      "icon": "assets/icon1.png",
+      "screenshots": [
+      ]
+    },
         {
       "identifier": "aimbxic",
       "name": "FTH MAGIC ( BẬT SẢNH )",
