@@ -421,13 +421,13 @@
       ],
       "password": "qphungios"
     },
-    {
+        {
       "identifier": "aimbxic",
       "name": "FTH MAGIC ( BẬT SẢNH )",
       "author": "buivduc",
       "version": "1.0.0",
       "summary": "buivduc07 • H4CK IOS",
-      "description": " Zalo 0904252080  Tele @buivduc07 ",
+      "description": "Zalo 0904252080  Tele @buivduc07 ",
       "category": "Game",
       "tags": [
         "Game",
@@ -448,54 +448,58 @@
         },
         {
           "minimum": "27.0",
-          "maximum": "27.0",
-          "builds": [
-            "24A5355q",
-            "24A5370h",
-            "24A5380h",
-            "24A5390f"
-          ]
+          "maximum": "27.0"
         }
       ],
-      {
-  "identifier": "theme-telephone",
-  "name": "Theme telephone",
-  "author": "buivduc",
-  "version": "1.0.0",
-  "summary": "buivduc07",
-  "description": "Theme telephone",
-  "category": "Theme",
-  "tags": [
-    "Theme",
-    "buivduc07"
-  ],
-  "publishedAt": "2026-09-15T07:15:00Z",
-  "download": "packages/Mèo.3105pass",
-  "sha256": "ae817a6c2d01e962d0554122933564b881a9b654d7a1eee89f41ce0d40d86d16",
-  "size": 2621284,
-  "supportedOS": [
-    {
-      "minimum": "17.0",
-      "maximum": "18.7.1"
+      "featured": true,
+      "isPrivate": false,
+      "icon": "assets/icon.png",
+      "screenshots": [
+        "assets/IMG_0361.png",
+        "assets/IMG_0804.png",
+        "assets/IMG_1208.png"
+      ]
     },
     {
-      "minimum": "26.0",
-      "maximum": "26.6.1"
-    },
-    {
-      "minimum": "27.0",
-      "maximum": "27.0"
+      "identifier": "theme-telephone",
+      "name": "Theme telephone",
+      "author": "buivduc",
+      "version": "1.0.0",
+      "summary": "buivduc07",
+      "description": "Theme telephone",
+      "category": "Theme",
+      "tags": [
+        "Theme",
+        "buivduc07"
+      ],
+      "publishedAt": "2026-09-15T07:15:00Z",
+      "download": "packages/Mèo.3105pass",
+      "sha256": "ae817a6c2d01e962d0554122933564b881a9b654d7a1eee89f41ce0d40d86d16",
+      "size": 2621284,
+      "supportedOS": [
+        {
+          "minimum": "17.0",
+          "maximum": "18.7.1"
+        },
+        {
+          "minimum": "26.0",
+          "maximum": "26.6.1"
+        },
+        {
+          "minimum": "27.0",
+          "maximum": "27.0"
+        }
+      ],
+      "featured": true,
+      "isPrivate": false,
+      "icon": "assets/icon.png",
+      "screenshots": [
+        "assets/IMG_0361.png",
+        "assets/IMG_0804.png",
+        "assets/IMG_1208.png"
+      ]
     }
-  ],
-  "featured": true,
-  "isPrivate": false,
-  "icon": "assets/icon.png",
-  "screenshots": [
-    "assets/IMG_0361.png",
-    "assets/IMG_0804.png",
-    "assets/IMG_1208.png"
   ]
-}
-      
+} 
 
 
