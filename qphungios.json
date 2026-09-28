@@ -469,3 +469,24 @@
     }
   ]
 }
+{
+  "identifier": "Mèo Cusstum",
+  "name": "themmetelephone",
+  "author": "buivietduc07",
+  "version": "1.0.0",
+  "summary": "Mèo.........",
+  "description": "",
+  "category": "Game",
+  "tags": [
+    "Game"
+  ],
+  "publishedAt": "2026-09-28T00:00:00Z",
+  "download": "packages/ten-file.3105pass",
+  "sha256": "ae817a6c2d01e962d0554122933564b881a9b654d7a1eee89f41ce0d40d86d16",
+  "size": 123456,
+  "supportedOS": [],
+  "featured": false,
+  "isPrivate": false,
+  "icon": "assets/logo-moi.png",
+  "screenshots": []
+}
