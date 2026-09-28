@@ -460,45 +460,40 @@
         "assets/IMG_1208.png"
       ]
     },
+      {
+  "identifier": "theme-telephone",
+  "name": "Theme telephone",
+  "author": "buivduc",
+  "version": "1.0.0",
+  "summary": "buivduc07",
+  "description": "Theme telephone",
+  "category": "Theme",
+  "tags": ["Theme", "buivduc07"],
+  "publishedAt": "2026-09-15T07:15:00Z",
+  "download": "packages/telephonemeo.3105pass",
+  "sha256": "ae817a6c2d01e962d0554122933564b881a9b654d7a1eee89f41ce0d40d86d16",
+  "size": 1202052,
+  "supportedOS": [
     {
-      "identifier": "theme-telephone",
-      "name": "Theme telephone",
-      "author": "buivduc",
-      "version": "1.0.0",
-      "summary": "buivduc07",
-      "description": "Theme telephone",
-      "category": "Theme",
-      "tags": [
-        "Theme",
-        "buivduc07"
-      ],
-      "publishedAt": "2026-09-15T07:15:00Z",
-      "download": "packages/telephonemeo.3105pass",
-      "sha256": "ae817a6c2d01e962d0554122933564b881a9b654d7a1eee89f41ce0d40d86d16",
-      "size": 1202052,
-      "supportedOS": [
-        {
-          "minimum": "17.0",
-          "maximum": "18.7.1"
-        },
-        {
-          "minimum": "26.0",
-          "maximum": "26.6.1"
-        },
-        {
-          "minimum": "27.0",
-          "maximum": "27.0"
-        }
-      ],
-      "featured": true,
-      "isPrivate": false,
-      "icon": "assets/icon.png",
-      "screenshots": [
-        "assets/IMG_0361.png",
-        "assets/IMG_0804.png",
-        "assets/IMG_1208.png"
-      ]
+      "minimum": "17.0",
+      "maximum": "18.7.1"
+    },
+    {
+      "minimum": "26.0",
+      "maximum": "26.6.1"
+    },
+    {
+      "minimum": "27.0",
+      "maximum": "27.0"
     }
+  ],
+  "featured": true,
+  "isPrivate": false,
+  "icon": "assets/icon.png",
+  "screenshots": [
+    "assets/IMG_0361.png",
+    "assets/IMG_0804.png",
+    "assets/IMG_1208.png"
   ]
 } 
 
