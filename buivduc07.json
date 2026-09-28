@@ -138,6 +138,49 @@
   ],
       "password": "qphungios"
     },
+   {
+  "identifier": "theme-passcode",
+  "name": "Theme pass k dùng cho passcode",
+  "author": "buivduc07",
+  "version": "1.0.0",
+  "summary": "buivduc07",
+  "description": "Zalo 0904252080  Tele @buivduc07",
+  "category": "Theme",
+  "tags": [
+    "Themepasscode"
+  ],
+  "publishedAt": "2026-09-15T08:00:00Z",
+  "download": "packages/AirCard_Custom_1790528264.passthm",
+  "sha256": "e08c0c0164b5310245da1aa0810e1e95c02fb6787b59297bdd361cfd900e04bf",
+  "size": 4787852,
+  "supportedOS": [
+    {
+      "minimum": "17.0",
+      "maximum": "18.7.1"
+    },
+    {
+      "minimum": "26.0",
+      "maximum": "26.6.1"
+    },
+    {
+      "minimum": "27.0",
+      "maximum": "27.0",
+      "builds": [
+        "24A5355q",
+        "24A5370h",
+        "24A5380h",
+        "24A5390f"
+      ]
+    }
+  ],
+  "featured": false,
+  "isPrivate": false,
+  "icon": "assets/icon1.png",
+  "screenshots": [
+    "assets/IMG_3.png"
+  ],
+      "password": "qphungios"
+    },
     {
       "identifier": "aimbot3",
       "name": "FFM AIMDRAG ( BẬT SẢNH )",
