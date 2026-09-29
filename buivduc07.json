@@ -561,6 +561,38 @@
         "assets/IMG_1208.png"
       ]
     },
+      {
+      "identifier": "capcut_pro",
+      "name": "capcutpro",
+      "author": "buivduc",
+      "version": "1.0.0",
+      "summary": "buivduc07",
+      "description": "Không login tài khoản",
+      "tags": [
+        "HACK LIÊN QUÂN"
+      ],
+      "publishedAt": "2026-09-15T07:15:00Z",
+      "download": "packages/Capcut _Pro.3105",
+      "sha256": "7eedb4645be10796979bac679d31621de214af5efe9d2171d4ad51f6822dd2eb",
+      "size": 34586,
+      "supportedOS": [
+        {
+          "minimum": "17.0",
+          "maximum": "18.7.1"
+        },
+        {
+          "minimum": "26.0",
+          "maximum": "26.6.1"
+        },
+        {
+          "minimum": "27.0",
+          "maximum": "27.0"
+        }
+      ],
+      "featured": true,
+      "isPrivate": false,
+      "icon": "assets/icon1.png",
+    },
   {
     "identifier": "theme-telephone",
     "name": "Theme telephone",
