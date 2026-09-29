@@ -413,23 +413,31 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-const THEME_REPO_URL =
+const REPO_URL =
     "https://raw.githubusercontent.com/buivietduc007-svg/cache/main/buivduc07.json";
 
-const themeRepoBtn =
-    document.getElementById("themeRepoBtn");
+document.getElementById("repoBtn").addEventListener("click", async function () {
 
-if (themeRepoBtn) {
-    themeRepoBtn.addEventListener("click", function () {
+    try {
+        await navigator.clipboard.writeText(REPO_URL);
+    } catch (e) {
+        const input = document.createElement("input");
+        input.value = REPO_URL;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        input.remove();
+    }
 
-        const deepLink =
-            "threeoneosfive://source?url=" +
-            encodeURIComponent(THEME_REPO_URL);
+    // Mở app 3105
+    window.location.href = "threeoneosfive://";
 
-        window.location.href = deepLink;
-
-    });
-}
+    // Thông báo
+    setTimeout(function () {
+        alert("✅ Đã copy URL kho\n\n" + REPO_URL);
+    }, 1000);
+});
+</script>
 </script>
 </body>
 
