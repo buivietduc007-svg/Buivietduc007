@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JSON</title>
+</head>
+<body>
+<script>
+fetch('./buivduc07.json')
+  .then(r => r.text())
+  .then(data => {
+    document.body.innerText = data;
+  });
+</script>
+</body>
+</html>
