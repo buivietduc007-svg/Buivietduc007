@@ -413,16 +413,23 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-const THEME_REPO =
+const THEME_REPO_URL =
     "https://raw.githubusercontent.com/buivietduc007-svg/cache/main/buivduc07.json";
 
-document.getElementById("addThemeRepoBtn").addEventListener("click", function () {
-    const deepLink =
-        "threeoneosfive://source?url=" +
-        encodeURIComponent(THEME_REPO);
+const themeRepoBtn =
+    document.getElementById("themeRepoBtn");
 
-    window.location.href = deepLink;
-});
+if (themeRepoBtn) {
+    themeRepoBtn.addEventListener("click", function () {
+
+        const deepLink =
+            "threeoneosfive://source?url=" +
+            encodeURIComponent(THEME_REPO_URL);
+
+        window.location.href = deepLink;
+
+    });
+}
 </script>
 </body>
 
