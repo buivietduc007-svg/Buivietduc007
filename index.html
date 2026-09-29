@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BUÌ VIỆT ĐỨC • REPO</title>
+  <meta name="theme-color" content="#050914">
+  <title>BUİVDUC07 • REPO BÙI VIỆT ĐỨC</title>
 
   <style>
     * {
@@ -12,15 +13,27 @@
       padding: 0;
     }
 
+    html,
+    body {
+      min-height: 100%;
+    }
+
     body {
       min-height: 100vh;
       overflow: hidden;
-      font-family: Arial, sans-serif;
-      color: white;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+      color: #fff;
       background:
-        radial-gradient(circle at top left, #183c68 0%, transparent 35%),
-        radial-gradient(circle at bottom right, #321b62 0%, transparent 35%),
-        linear-gradient(135deg, #02040a, #071525 55%, #0d0618);
+        radial-gradient(circle at 15% 0%, rgba(22, 130, 255, .20), transparent 32%),
+        radial-gradient(circle at 90% 15%, rgba(157, 76, 255, .18), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(0, 220, 255, .10), transparent 35%),
+        linear-gradient(135deg, #02040a 0%, #061120 52%, #0c0617 100%);
     }
 
     body::before {
@@ -31,39 +44,95 @@
       background-image:
         linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 35px 35px;
+      background-size: 34px 34px;
+      mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.95),
+        rgba(0,0,0,.30)
+      );
     }
+
+    /* =========================
+       SPLASH / MENU CHÀO
+    ========================= */
 
     .welcome {
       position: fixed;
       inset: 0;
+      z-index: 9999;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
-      background: rgba(2, 5, 12, 0.72);
-      backdrop-filter: blur(12px);
-      z-index: 9999;
+      background: rgba(2, 5, 12, .74);
+      backdrop-filter: blur(14px);
+      transition:
+        opacity .65s ease,
+        visibility .65s ease;
     }
 
-    .box {
-      width: min(650px, 100%);
-      padding: 40px 28px;
-      border: 1px solid rgba(80, 210, 255, 0.28);
-      border-radius: 28px;
+    .welcome.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .welcome-box {
+      position: relative;
+      width: min(680px, 100%);
+      padding: 42px 28px 34px;
       text-align: center;
-      background: rgba(7, 15, 30, 0.88);
+      overflow: hidden;
+      border: 1px solid rgba(75, 210, 255, .24);
+      border-radius: 30px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(10, 23, 43, .95),
+          rgba(6, 12, 27, .94)
+        );
       box-shadow:
-        0 0 50px rgba(0, 190, 255, 0.12),
-        0 25px 80px rgba(0,0,0,.55);
-      animation: showBox .7s ease;
+        0 30px 100px rgba(0,0,0,.55),
+        0 0 60px rgba(30, 190, 255, .08);
+      animation: boxIn .7s ease;
     }
 
-    @keyframes showBox {
+    .welcome-box::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      top: -150px;
+      left: -80px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(42, 208, 255, .16),
+        transparent 70%
+      );
+    }
+
+    .welcome-box::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      right: -150px;
+      bottom: -180px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(166, 81, 255, .14),
+        transparent 70%
+      );
+    }
+
+    @keyframes boxIn {
       from {
         opacity: 0;
-        transform: translateY(25px) scale(.96);
+        transform: translateY(25px) scale(.95);
       }
+
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -71,300 +140,520 @@
     }
 
     .logo {
-      width: 85px;
-      height: 85px;
-      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 22px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 24px;
+      border-radius: 25px;
       font-size: 22px;
-      font-weight: 900;
-      background: linear-gradient(135deg, #19d8ff, #655cff, #b84cff);
-      box-shadow: 0 0 35px rgba(38, 205, 255, .28);
-    }
-
-    h1 {
-      font-size: clamp(25px, 6vw, 42px);
-      margin-bottom: 12px;
+      font-weight: 1000;
       letter-spacing: 1px;
+      color: #fff;
+      background:
+        linear-gradient(
+          135deg,
+          #1bd8ff 0%,
+          #5769ff 52%,
+          #b64cff 100%
+        );
+      box-shadow:
+        0 0 42px rgba(37, 205, 255, .25),
+        inset 0 1px 0 rgba(255,255,255,.25);
     }
 
-    .hello {
-      color: #53dcff;
+    .welcome-title {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(26px, 6vw, 45px);
+      line-height: 1.12;
+      font-weight: 950;
+      letter-spacing: -1px;
     }
 
-    .name {
-      color: #bd80ff;
+    .cyan {
+      color: #55ddff;
     }
 
-    .desc {
-      color: #9eb4cf;
-      line-height: 1.7;
-      font-size: 15px;
+    .purple {
+      color: #bf82ff;
     }
 
-    .info {
+    .welcome-desc {
+      position: relative;
+      z-index: 1;
+      margin-top: 14px;
+      color: #9ab1ca;
+      line-height: 1.75;
+      font-size: 14px;
+    }
+
+    .welcome-info {
+      position: relative;
+      z-index: 1;
+      margin-top: 23px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 22px;
     }
 
     .tag {
-      padding: 10px 15px;
+      padding: 9px 14px;
       border-radius: 999px;
-      color: #dff8ff;
-      border: 1px solid rgba(91, 214, 255, .18);
+      border: 1px solid rgba(105, 205, 255, .17);
       background: rgba(255,255,255,.035);
-      font-size: 13px;
-      font-weight: bold;
+      color: #dcf6ff;
+      font-size: 12px;
+      font-weight: 800;
     }
 
-    .enter {
-      margin-top: 26px;
-      width: 100%;
-      padding: 14px 20px;
-      border: 0;
-      border-radius: 15px;
-      color: white;
-      background: linear-gradient(135deg, #16cdea, #5367ff, #a14fff);
-      box-shadow: 0 12px 35px rgba(75, 110, 255, .24);
-      font-size: 15px;
-      font-weight: 900;
-      cursor: pointer;
-      transition: .2s;
+    .loading {
+      position: relative;
+      z-index: 1;
+      width: min(360px, 100%);
+      height: 4px;
+      margin: 27px auto 0;
+      overflow: hidden;
+      border-radius: 99px;
+      background: rgba(255,255,255,.08);
     }
 
-    .enter:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.1);
+    .loading-bar {
+      width: 0%;
+      height: 100%;
+      border-radius: 99px;
+      background:
+        linear-gradient(
+          90deg,
+          #24d8ff,
+          #5873ff,
+          #b75cff
+        );
+      animation: loading 2.1s linear forwards;
     }
+
+    @keyframes loading {
+      from {
+        width: 0%;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    /* =========================
+       JSON CONTENT
+    ========================= */
 
     .content {
       display: none;
       min-height: 100vh;
-      padding: 25px;
-      white-space: pre-wrap;
+      height: 100vh;
+      padding: 86px 18px 24px;
       overflow: auto;
-      font-family: Consolas, monospace;
-      font-size: 14px;
-      line-height: 1.6;
-      color: #dcecff;
+      color: #dceeff;
+    }
+
+    .content.show {
+      display: block;
+      animation: contentIn .45s ease;
+    }
+
+    @keyframes contentIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .topbar {
       position: fixed;
-      top: 15px;
-      left: 15px;
-      right: 15px;
-      z-index: 10;
-      padding: 13px 17px;
-      border: 1px solid rgba(100, 200, 255, .15);
-      border-radius: 15px;
+      top: 14px;
+      left: 14px;
+      right: 14px;
+      z-index: 100;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 12px 17px;
+      border: 1px solid rgba(105, 205, 255, .16);
+      border-radius: 16px;
       background: rgba(4, 11, 23, .88);
-      backdrop-filter: blur(10px);
-      color: #8bdfff;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 10px 35px rgba(0,0,0,.22);
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 950;
+      color: #68ddff;
+    }
+
+    .brand span {
+      color: #ba83ff;
+    }
+
+    .support {
+      font-size: 12px;
+      color: #8fa9c4;
+    }
+
+    .json-card {
+      width: min(1200px, 100%);
+      margin: 0 auto;
+      border: 1px solid rgba(105, 205, 255, .13);
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(4, 11, 22, .72);
+      box-shadow: 0 20px 70px rgba(0,0,0,.30);
+    }
+
+    .json-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 13px 16px;
+      border-bottom: 1px solid rgba(105, 205, 255, .10);
+      color: #8ca8c3;
+      font-size: 12px;
       font-weight: 800;
     }
 
+    .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 7px;
+      border-radius: 50%;
+      background: #42e59a;
+      box-shadow: 0 0 12px rgba(66,229,154,.5);
+    }
+
+    #json {
+      padding: 18px;
+      min-height: calc(100vh - 160px);
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
     .error {
-      color: #ff7185;
-      text-align: center;
-      margin-top: 80px;
+      color: #ff7187;
       font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 650px) {
+      .welcome-box {
+        padding: 32px 18px 27px;
+        border-radius: 24px;
+      }
+
+      .logo {
+        width: 72px;
+        height: 72px;
+        border-radius: 20px;
+        font-size: 18px;
+      }
+
+      .welcome-desc {
+        font-size: 13px;
+      }
+
+      .content {
+        padding: 80px 10px 15px;
+      }
+
+      .topbar {
+        top: 9px;
+        left: 9px;
+        right: 9px;
+        min-height: 48px;
+        padding: 10px 12px;
+      }
+
+      .brand {
+        font-size: 12px;
+      }
+
+      .support {
+        display: none;
+      }
+
+      .json-card {
+        border-radius: 16px;
+      }
+
+      #json {
+        padding: 14px;
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- MENU CHÀO -->
+  <!-- =========================
+       MENU CHÀO TỰ ĐỘNG
+  ========================== -->
+
   <div class="welcome" id="welcome">
-    <div class="box">
+    <div class="welcome-box">
 
-      <div class="logo">BD07</div>
+      <div class="logo">
+        BD07
+      </div>
 
-      <h1>
-        <span class="hello">XIN CHÀO ĐẾN VỚI</span><br>
-        <span class="name">REPO BÙI VIỆT ĐỨC</span>
-      </h1>
+      <div class="welcome-title">
+        <span class="cyan">XIN CHÀO ĐẾN VỚI</span>
+        <br>
+        <span class="purple">REPO BÙI VIỆT ĐỨC</span>
+      </div>
 
-      <div class="desc">
+      <div class="welcome-desc">
         Chào mừng bạn đến với repository của
         <b>BUÌVDUC07</b>.
         <br>
-        Kho package và tài nguyên được quản lý bởi Buì Việt Đức.
+        CRE: <b>buivduc07</b>
+        •
+        Hỗ trợ Tele: <b>@buivduc07</b>
       </div>
 
-      <div class="info">
-        <div class="tag">CRE: buivduc07</div>
-        <div class="tag">Tele: @buivduc07</div>
-        <div class="tag">GitHub Pages</div>
+      <div class="welcome-info">
+        <div class="tag">✦ CRE: buivduc07</div>
+        <div class="tag">✈ Tele: @buivduc07</div>
+        <div class="tag">◈ JSON REPO</div>
       </div>
 
-      <button class="enter" onclick="enterRepo()">
-        🚀 VÀO REPOSITORY
-      </button>
+      <div class="loading">
+        <div class="loading-bar"></div>
+      </div>
 
     </div>
   </div>
 
-  <!-- NỘI DUNG JSON -->
-  <div class="content" id="content">
+
+  <!-- =========================
+       NỘI DUNG JSON
+  ========================== -->
+
+  <main class="content" id="content">
+
     <div class="topbar">
-      BUÌVDUC07 • REPO BÙI VIỆT ĐỨC
+      <div class="brand">
+        BUÌVDUC07 <span>• REPO BÙI VIỆT ĐỨC</span>
+      </div>
+
+      <div class="support">
+        Tele @buivduc07
+      </div>
     </div>
 
-    <div id="json">Đang tải JSON...</div>
-  </div>
+    <section class="json-card">
+
+      <div class="json-head">
+        <div>
+          <span class="dot"></span>
+          buivduc07.json
+        </div>
+
+        <div>
+          GitHub Pages
+        </div>
+      </div>
+
+      <div id="json">
+        Đang tải JSON...
+      </div>
+
+    </section>
+
+  </main>
+
 
   <script>
-    /* =========================
-       LOAD JSON
-    ========================= */
+    /* =====================================
+       TẢI JSON
+    ===================================== */
 
-    fetch('./buivduc07.json', {
-      cache: 'no-store'
+    fetch("./buivduc07.json", {
+      cache: "no-store"
     })
-      .then(response => {
+      .then(function(response) {
+
         if (!response.ok) {
-          throw new Error('Không thể tải buivduc07.json');
+          throw new Error(
+            "Không thể tải buivduc07.json (HTTP " +
+            response.status +
+            ")"
+          );
         }
+
         return response.text();
       })
-      .then(data => {
-        document.getElementById('json').textContent = data;
+
+      .then(function(data) {
+
+        document.getElementById("json").textContent = data;
+
       })
-      .catch(error => {
-        document.getElementById('json').innerHTML =
+
+      .catch(function(error) {
+
+        document.getElementById("json").innerHTML =
           '<div class="error">' +
-          '❌ ' + error.message +
-          '</div>';
+            "❌ " +
+            error.message +
+          "</div>";
+
       });
 
 
-    /* =========================
-       VÀO REPO
-    ========================= */
+    /* =====================================
+       TỰ ĐỘNG ĐÓNG MENU CHÀO
+    ===================================== */
 
-    function enterRepo() {
-      const welcome = document.getElementById('welcome');
-      const content = document.getElementById('content');
+    window.addEventListener("load", function() {
 
-      welcome.style.opacity = '0';
-      welcome.style.transition = 'opacity .35s ease';
+      setTimeout(function() {
 
-      setTimeout(() => {
-        welcome.style.display = 'none';
-        content.style.display = 'block';
-        document.body.style.overflow = 'auto';
-      }, 350);
-    }
+        var welcome =
+          document.getElementById("welcome");
+
+        var content =
+          document.getElementById("content");
+
+        welcome.classList.add("hide");
+
+        setTimeout(function() {
+
+          welcome.style.display = "none";
+
+          content.classList.add("show");
+
+          document.body.style.overflow = "auto";
+
+        }, 650);
+
+      }, 2200);
+
+    });
 
 
-    /* =========================
+    /* =====================================
        CHẶN CHUỘT PHẢI
-    ========================= */
+    ===================================== */
 
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-    });
-
-
-    /* =========================
-       CHẶN PHÍM
-    ========================= */
-
-    document.addEventListener('keydown', function(e) {
-
-      /* F12 */
-      if (e.key === 'F12') {
-        e.preventDefault();
-        return false;
+    document.addEventListener(
+      "contextmenu",
+      function(event) {
+        event.preventDefault();
       }
-
-      /* Ctrl + Shift + I */
-      if (
-        e.ctrlKey &&
-        e.shiftKey &&
-        e.key.toLowerCase() === 'i'
-      ) {
-        e.preventDefault();
-        return false;
-      }
-
-      /* Ctrl + Shift + J */
-      if (
-        e.ctrlKey &&
-        e.shiftKey &&
-        e.key.toLowerCase() === 'j'
-      ) {
-        e.preventDefault();
-        return false;
-      }
-
-      /* Ctrl + U */
-      if (
-        e.ctrlKey &&
-        e.key.toLowerCase() === 'u'
-      ) {
-        e.preventDefault();
-        return false;
-      }
-
-      /* Ctrl + Shift + C */
-      if (
-        e.ctrlKey &&
-        e.shiftKey &&
-        e.key.toLowerCase() === 'c'
-      ) {
-        e.preventDefault();
-        return false;
-      }
-
-    });
+    );
 
 
-    /* =========================
-       DEVTOOLS DETECTION
-    ========================= */
+    /* =====================================
+       CHẶN PHÍM TẮT PHỔ BIẾN
+    ===================================== */
 
-    setInterval(function() {
-      const threshold = 160;
+    document.addEventListener(
+      "keydown",
+      function(event) {
 
-      if (
-        window.outerWidth - window.innerWidth > threshold ||
-        window.outerHeight - window.innerHeight > threshold
-      ) {
-        document.body.innerHTML = `
-          <div style="
-            min-height:100vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            background:#050812;
-            color:white;
-            font-family:Arial;
-            text-align:center;
-            padding:20px;
-          ">
-            <div>
-              <h1 style="color:#56ddff">
-                BUÌVDUC07
-              </h1>
+        /* F12 */
 
-              <p style="color:#91a8c4">
-                DevTools đã được phát hiện.
-                <br>
-                Vui lòng đóng Developer Tools để tiếp tục.
-              </p>
-            </div>
-          </div>
-        `;
-      }
-    }, 1000);
+        if (event.key === "F12") {
+          event.preventDefault();
+          return false;
+        }
+
+
+        /* Ctrl + Shift + I */
+
+        if (
+          event.ctrlKey &&
+          event.shiftKey &&
+          event.key.toLowerCase() === "i"
+        ) {
+          event.preventDefault();
+          return false;
+        }
+
+
+        /* Ctrl + Shift + J */
+
+        if (
+          event.ctrlKey &&
+          event.shiftKey &&
+          event.key.toLowerCase() === "j"
+        ) {
+          event.preventDefault();
+          return false;
+        }
+
+
+        /* Ctrl + Shift + C */
+
+        if (
+          event.ctrlKey &&
+          event.shiftKey &&
+          event.key.toLowerCase() === "c"
+        ) {
+          event.preventDefault();
+          return false;
+        }
+
+
+        /* Ctrl + U */
+
+        if (
+          event.ctrlKey &&
+          event.key.toLowerCase() === "u"
+        ) {
+          event.preventDefault();
+          return false;
+        }
+
+
+        /* Ctrl + S */
+
+        if (
+          event.ctrlKey &&
+          event.key.toLowerCase() === "s"
+        ) {
+          event.preventDefault();
+          return false;
+        }
+
+      },
+      true
+    );
   </script>
 
 </body>
