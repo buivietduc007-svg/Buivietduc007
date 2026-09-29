@@ -161,6 +161,30 @@
             border-color: rgba(76, 255, 173, 0.55);
         }
 
+        .copy-toast {
+            position: fixed;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%) translateY(20px);
+            padding: 12px 20px;
+            border-radius: 13px;
+            background: rgba(18, 18, 20, 0.94);
+            border: 1px solid rgba(80, 220, 255, 0.35);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 800;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .28s ease, transform .28s ease;
+            z-index: 99999;
+        }
+
+        .copy-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
         .jd-music-container {
             margin: 30px 0 10px 0;
             padding: 20px;
@@ -240,6 +264,21 @@
             background: var(--rainbow);
             background-size: 200% auto;
             animation: rainbow_move 4s linear infinite;
+        }
+
+        @media (max-width: 520px) {
+            .copy-toast {
+                left: 12px;
+                right: 12px;
+                bottom: 20px;
+                width: auto;
+                text-align: center;
+                transform: translateY(20px);
+            }
+
+            .copy-toast.show {
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 768px) {
@@ -461,7 +500,99 @@
             controlStatus: function (context) { this.previousY = this.y; this.x += this.vx; this.y += this.vy; this.vy += this.ay; if (this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE) { this.vy += this.GRAVITY; this.isOut = true } else { this.isOut = false } this.renderer.generateEpicenter(this.x, this.y, this.y - this.previousY); if (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) { this.init() } },
             render: function (context) { context.save(); context.translate(this.x, this.y); context.rotate(Math.PI + Math.atan2(this.vy, this.vx)); context.scale(1, this.direction ? 1 : -1); context.beginPath(); context.moveTo(-25, 0); context.bezierCurveTo(-15, 12, 10, 8, 30, 0); context.bezierCurveTo(10, -8, -15, -12, -25, 0); context.fill(); context.restore(); this.controlStatus(context); }
         };
-        /* =========================\n           NÚT 5: COPY REPO LINK\n           Chỉ cần đổi giá trị REPO_LINK\n        ========================= */\n        const REPO_LINK = "PASTE_YOUR_REPO_LINK_HERE";\n\n        const copyRepoBtn = document.getElementById("copyRepoBtn");\n\n        if (copyRepoBtn) {\n            copyRepoBtn.addEventListener("click", async function () {\n                if (\n                    !REPO_LINK ||\n                    REPO_LINK === "PASTE_YOUR_REPO_LINK_HERE"\n                ) {\n                    alert("Hãy thay REPO_LINK bằng link repo của bạn.");\n                    return;\n                }\n\n                try {\n                    await navigator.clipboard.writeText(REPO_LINK);\n\n                    copyRepoBtn.classList.add("copied");\n                    copyRepoBtn.title = "Đã copy!";\n\n                    setTimeout(function () {\n                        copyRepoBtn.classList.remove("copied");\n                        copyRepoBtn.title = "Copy repo link";\n                    }, 1400);\n\n                } catch (error) {\n                    const temp = document.createElement("input");\n                    temp.value = REPO_LINK;\n                    document.body.appendChild(temp);\n                    temp.select();\n                    temp.setSelectionRange(0, temp.value.length);\n\n                    try {\n                        document.execCommand("copy");\n                        alert("Đã copy repo link!");\n                    } catch (e) {\n                        alert("Không thể tự copy. Link repo: " + REPO_LINK);\n                    }\n\n                    document.body.removeChild(temp);\n                }\n            });\n        }\n\n        $(function () { RENDERER.init() });
+        /* =========================
+           NÚT 5: COPY REPO LINK
+        ========================= */
+
+        const REPO_LINK =
+            "https://raw.githubusercontent.com/buivietduc007-svg/cache/main/buivduc07.json";
+
+        const copyRepoBtn =
+            document.getElementById("copyRepoBtn");
+
+        function showCopyToast(message) {
+            let toast =
+                document.getElementById("copyToast");
+
+            if (!toast) {
+                toast = document.createElement("div");
+                toast.id = "copyToast";
+                toast.className = "copy-toast";
+                document.body.appendChild(toast);
+            }
+
+            toast.textContent = message;
+            toast.classList.add("show");
+
+            clearTimeout(window.copyToastTimer);
+
+            window.copyToastTimer = setTimeout(function () {
+                toast.classList.remove("show");
+            }, 1800);
+        }
+
+        if (copyRepoBtn) {
+            copyRepoBtn.addEventListener(
+                "click",
+                async function () {
+
+                    try {
+                        await navigator.clipboard.writeText(
+                            REPO_LINK
+                        );
+
+                        copyRepoBtn.classList.add("copied");
+
+                        showCopyToast(
+                            "✅ Đã copy repo link"
+                        );
+
+                        setTimeout(function () {
+                            copyRepoBtn.classList.remove("copied");
+                        }, 1000);
+
+                    } catch (error) {
+
+                        /* Fallback cho trình duyệt cũ */
+                        const temp =
+                            document.createElement("input");
+
+                        temp.value = REPO_LINK;
+
+                        document.body.appendChild(temp);
+
+                        temp.select();
+                        temp.setSelectionRange(
+                            0,
+                            temp.value.length
+                        );
+
+                        try {
+                            document.execCommand("copy");
+
+                            copyRepoBtn.classList.add("copied");
+
+                            showCopyToast(
+                                "✅ Đã copy repo link"
+                            );
+
+                            setTimeout(function () {
+                                copyRepoBtn.classList.remove("copied");
+                            }, 1000);
+
+                        } catch (e) {
+                            showCopyToast(
+                                "❌ Không thể copy link"
+                            );
+                        }
+
+                        document.body.removeChild(temp);
+                    }
+                }
+            );
+        }
+
+        $(function () { RENDERER.init() });
     </script>
 </body>
 
