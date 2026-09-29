@@ -143,15 +143,14 @@
   "author": "buivduc07",
   "version": "1.0.0",
   "summary": "buivduc07",
-  "description": "Zalo 0904252080  Tele @buivduc07",
-  "category": "Theme",
+  "description": "Chạm 4 ngón nhấn 1-2 lần vào màn hình để mở menu ",
   "tags": [
-    "Themepass"
+    "HACK FREEFIRE"
   ],
   "publishedAt": "2026-09-15T08:00:00Z",
-  "download": "packages/AirCard_Custom_1790528264.passthm",
-  "sha256": "e08c0c0164b5310245da1aa0810e1e95c02fb6787b59297bdd361cfd900e04bf",
-  "size": 4787852,
+  "download": "packages/Dela_Menu.3105",
+  "sha256": "2745d099339e5e837759646c6f16d0aa8e634039f1b9b4de474845fb66b3c722",
+  "size": 69913,
   "supportedOS": [
     {
       "minimum": "17.0",
@@ -176,7 +175,7 @@
   "isPrivate": false,
   "icon": "assets/icon1.png",
   "screenshots": [
-    "assets/IMG_3.png"
+    "assets/IMG_6.png"
   ],
       "password": "qphungios"
     },
