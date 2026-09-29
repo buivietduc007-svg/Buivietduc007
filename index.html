@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Henry Developer</title>
+    <title>BUI VIET DUC Developer</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Orbitron:wght@700&display=swap"
         rel="stylesheet">
@@ -148,6 +148,19 @@
             color: #fff;
         }
 
+        .social-item img.custom-social-icon {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            display: block;
+            pointer-events: none;
+        }
+
+        .social-item.copy-repo.copied {
+            box-shadow: 0 0 18px rgba(76, 255, 173, 0.35);
+            border-color: rgba(76, 255, 173, 0.55);
+        }
+
         .jd-music-container {
             margin: 30px 0 10px 0;
             padding: 20px;
@@ -273,11 +286,35 @@
                     <p class="rainbow-text" style="font-size: 0.8rem; opacity: 0.8; letter-spacing: 1px;">
                         #henry_developer_fullstack</p>
                     <div class="social-links">
-                        <a href="#" class="social-item"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-item"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-item"><i class="fab fa-telegram-plane"></i></a>
-                        <a href="#" class="social-item"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="social-item"><i class="fas fa-code-compare"></i></a>
+                        <!-- Tự thay 4 link bên dưới -->
+                        <a href="https://www.facebook.com/profile.php?id=61584068354873" target="_blank" rel="noopener noreferrer"
+                           class="social-item" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="https://github.com/buivietduc007-svg" target="_blank" rel="noopener noreferrer"
+                           class="social-item" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+
+                        <a href="https://t.me/buivduc07" target="_blank" rel="noopener noreferrer"
+                           class="social-item" aria-label="Telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+
+                        <a href="https://www.tiktok.com/buivduc24" target="_blank" rel="noopener noreferrer"
+                           class="social-item" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+
+                        <!-- Nút 5: icon lấy từ assets/IMG_icon.png + copy link repo -->
+                        <button type="button" class="social-item copy-repo"
+                                id="copyRepoBtn" aria-label="Copy repo link"
+                                title="Copy repo link">
+                            <img src="assets/IMG_4.png"
+                                 alt="https://buivietduc007-svg.github.io/buivduc07.json"
+                                 class="custom-social-icon">
+                        </button>
                     </div>
                 </div>
             </div>
@@ -424,7 +461,7 @@
             controlStatus: function (context) { this.previousY = this.y; this.x += this.vx; this.y += this.vy; this.vy += this.ay; if (this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE) { this.vy += this.GRAVITY; this.isOut = true } else { this.isOut = false } this.renderer.generateEpicenter(this.x, this.y, this.y - this.previousY); if (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) { this.init() } },
             render: function (context) { context.save(); context.translate(this.x, this.y); context.rotate(Math.PI + Math.atan2(this.vy, this.vx)); context.scale(1, this.direction ? 1 : -1); context.beginPath(); context.moveTo(-25, 0); context.bezierCurveTo(-15, 12, 10, 8, 30, 0); context.bezierCurveTo(10, -8, -15, -12, -25, 0); context.fill(); context.restore(); this.controlStatus(context); }
         };
-        $(function () { RENDERER.init() });
+        /* =========================\n           NÚT 5: COPY REPO LINK\n           Chỉ cần đổi giá trị REPO_LINK\n        ========================= */\n        const REPO_LINK = "PASTE_YOUR_REPO_LINK_HERE";\n\n        const copyRepoBtn = document.getElementById("copyRepoBtn");\n\n        if (copyRepoBtn) {\n            copyRepoBtn.addEventListener("click", async function () {\n                if (\n                    !REPO_LINK ||\n                    REPO_LINK === "PASTE_YOUR_REPO_LINK_HERE"\n                ) {\n                    alert("Hãy thay REPO_LINK bằng link repo của bạn.");\n                    return;\n                }\n\n                try {\n                    await navigator.clipboard.writeText(REPO_LINK);\n\n                    copyRepoBtn.classList.add("copied");\n                    copyRepoBtn.title = "Đã copy!";\n\n                    setTimeout(function () {\n                        copyRepoBtn.classList.remove("copied");\n                        copyRepoBtn.title = "Copy repo link";\n                    }, 1400);\n\n                } catch (error) {\n                    const temp = document.createElement("input");\n                    temp.value = REPO_LINK;\n                    document.body.appendChild(temp);\n                    temp.select();\n                    temp.setSelectionRange(0, temp.value.length);\n\n                    try {\n                        document.execCommand("copy");\n                        alert("Đã copy repo link!");\n                    } catch (e) {\n                        alert("Không thể tự copy. Link repo: " + REPO_LINK);\n                    }\n\n                    document.body.removeChild(temp);\n                }\n            });\n        }\n\n        $(function () { RENDERER.init() });
     </script>
 </body>
 
